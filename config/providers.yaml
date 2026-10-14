@@ -1,0 +1,22 @@
+providers:
+  local:
+    base_url: http://127.0.0.1:11435/v1
+    timeout: 300
+    max_retries: 0
+    key_strategy: round_robin
+    keys:
+      - key: local-no-key
+    models:
+      - name: qwen2.5-1.5b-instruct
+        routing_keys:
+          - qwen2.5-1.5b-instruct
+        pricing:
+          prompt: 0
+          completion: 0
+
+auth:
+  api_key: dev-router-key
+
+server:
+  host: 127.0.0.1
+  port: 8000

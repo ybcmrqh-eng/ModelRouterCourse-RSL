@@ -454,3 +454,31 @@ This repository is now aligned around an internal-service-first router:
 - routing-profile-driven behavior
 - provider routing and fallback
 - optional standalone compatibility for local testing
+
+## RSL Extension
+
+This repository includes an integrated Recursive Self-Learning (RSL) module.
+
+The RSL loop is:
+
+`generate -> evaluate -> enforce hard constraints -> retain best answer -> feed weaknesses into the next round -> persist reusable memory`
+
+It does not retrain model weights. Learning is applied through prompts, strategy selection, and persisted memory.
+
+Main endpoints:
+
+- `GET /v1/rsl/health`
+- `POST /v1/rsl/run`
+- `GET /v1/rsl/runs`
+- `GET /v1/rsl/runs/{run_id}`
+- `GET /v1/rsl/memory`
+
+The module uses the existing ModelRouter authentication and SQLite database. Tables `rsl_runs`, `rsl_rounds`, and `rsl_memories` are created automatically at startup.
+
+A local OpenAI-compatible provider can be configured with provider type `local`; the included `config/providers.yaml` points it at `http://127.0.0.1:11435/v1`.
+
+Focused tests:
+
+```bash
+python -m unittest tests.test_rsl_engine -v
+```

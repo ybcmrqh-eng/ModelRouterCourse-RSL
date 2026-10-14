@@ -1,0 +1,26 @@
+[
+  {
+    "round": 1,
+    "score": 0.8536,
+    "passed": false,
+    "constraint_score": 0.8571428571428571,
+    "feedbacks": "诗符合要求，结构完整，内容丰富，符合主题，且没有额外解释。 Hard constraint violations: 第四行含月: line 4 must contain '月', got '夜深露冷添寒意。'",
+    "answer": "秋水共长天一色，\n风起波涛带秋声。\n明月高悬照影清，\n夜深露冷添寒意。"
+  },
+  {
+    "round": 2,
+    "score": 0.7821,
+    "passed": false,
+    "constraint_score": 0.7142857142857143,
+    "feedbacks": "诗符合要求，每行正好七个汉字，主题是秋天的湖，第二行以‘风’开头，第四行包含‘月’，且未超出字数限制。 Hard constraint violations: 第二行七字: line 2 expected 7 chars, got 8; 第二行风字开头: line 2 must start with '风', got '月色洒在水面上光。'",
+    "answer": "秋风摇动湖水长，\n月色洒在水面上光。\n风起波涛带秋声，\n月高悬照影清凉。"
+  },
+  {
+    "round": 3,
+    "score": 0.925,
+    "passed": true,
+    "constraint_score": 1.0,
+    "feedbacks": "诗符合要求，每行正好七个汉字，主题是秋天的湖，第二行以‘风’开头，第四行包含‘月’，且未超出字数限制。 All hard constraints passed.",
+    "answer": "秋水共长天一色，\n风起波涛带秋声。\n明月高悬照影清，\n月照湖影水波轻。"
+  }
+]

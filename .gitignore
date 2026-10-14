@@ -20,3 +20,6 @@ runs/
 logs/
 *.log
 *.log.*
+
+# Project-local virtual environment.
+.venv/

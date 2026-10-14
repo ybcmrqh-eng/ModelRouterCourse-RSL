@@ -13,6 +13,7 @@ from app.providers.deepseek import DeepSeekProvider
 
 PROVIDER_MAP = {
     "gateway": OpenAIProvider,
+    "local": OpenAIProvider,
     "openai": OpenAIProvider,
     "anthropic": AnthropicProvider,
     "deepseek": DeepSeekProvider,
@@ -21,6 +22,7 @@ PROVIDER_MAP = {
 
 ENV_KEY_BY_PROVIDER = {
     "gateway": "GATEWAY_KEY_1",
+    "local": "LOCAL_KEY_1",
     "openai": "OPENAI_KEY_1",
     "anthropic": "ANTHROPIC_KEY_1",
     "deepseek": "DEEPSEEK_KEY_1",

@@ -12,6 +12,7 @@ from app.core.router import RouterEngine
 from app.core.embedder import SemanticEmbedder
 from app.core.cascade import CascadeEngine
 from app.core.recommender import ModelRecommender
+from app.core.rsl import RSLEngine
 from app.core.model_discovery import sync_all_providers_from_remote
 from app.core.rate_limit import FixedWindowRateLimiter
 from app.core.exceptions import (
@@ -23,7 +24,7 @@ from app.core.exceptions import (
     ModelAccessError,
     RateLimitError,
 )
-from app.api import chat, models
+from app.api import chat, models, rsl
 from app.api.admin import router as admin_router
 
 VALID_RUNTIME_MODES = {"internal", "standalone"}
@@ -77,6 +78,7 @@ async def lifespan(app: FastAPI):
     enable_admin_api = _env_flag("ROUTER_ENABLE_ADMIN_API", not internal_mode)
     enable_standalone_keys = _env_flag("ROUTER_ENABLE_STANDALONE_KEYS", not internal_mode)
     enable_usage_api = _env_flag("ROUTER_ENABLE_USAGE_API", not internal_mode)
+    enable_rsl_api = _env_flag("ROUTER_ENABLE_RSL_API", True)
     auth_key = config.auth.get("api_key", "")
     internal_auth_key = os.environ.get("ROUTER_INTERNAL_API_KEY", auth_key).strip()
     admin_key = os.environ.get("ADMIN_API_KEY", "").strip()
@@ -113,15 +115,19 @@ async def lifespan(app: FastAPI):
     cascade = CascadeEngine(db, router)
     await cascade.reload()
     recommender = ModelRecommender()
+    rsl_engine = RSLEngine(db, router)
+    await rsl_engine.initialize()
 
     app.state.db = db
     app.state.router = router
     app.state.cascade = cascade
     app.state.recommender = recommender
+    app.state.rsl = rsl_engine
     app.state.runtime_mode = runtime_mode
     app.state.enable_admin_api = enable_admin_api
     app.state.enable_standalone_keys = enable_standalone_keys
     app.state.enable_usage_api = enable_usage_api
+    app.state.enable_rsl_api = enable_rsl_api
     app.state.auth_key = auth_key
     app.state.internal_auth_key = internal_auth_key
     app.state.admin_key = admin_key
@@ -157,6 +163,8 @@ app = FastAPI(title="Model Router", version="0.2.0", lifespan=lifespan)
 
 app.include_router(chat.router)
 app.include_router(models.router)
+if _env_flag("ROUTER_ENABLE_RSL_API", True):
+    app.include_router(rsl.router)
 if _env_flag("ROUTER_ENABLE_ADMIN_API", _runtime_mode() != "internal"):
     app.include_router(admin_router)
 
@@ -229,6 +237,7 @@ async def health_check(request: Request):
                 "admin_api": getattr(request.app.state, "enable_admin_api", True),
                 "standalone_keys": getattr(request.app.state, "enable_standalone_keys", True),
                 "usage_api": getattr(request.app.state, "enable_usage_api", True),
+                "rsl": getattr(request.app.state, "enable_rsl_api", True),
             }
         }
     except Exception as e:
