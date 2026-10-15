@@ -27,7 +27,7 @@ class OpenAIProvider(BaseProvider):
             "model": model_config.name,
             "messages": [m.model_dump() for m in request.messages],
         }
-        for attr in ("temperature", "max_tokens", "top_p", "frequency_penalty", "presence_penalty", "stop"):
+        for attr in ("temperature", "max_tokens", "top_p", "frequency_penalty", "presence_penalty", "stop", "seed"):
             val = getattr(request, attr, None)
             if val is not None:
                 data[attr] = val

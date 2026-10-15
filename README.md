@@ -457,28 +457,46 @@ This repository is now aligned around an internal-service-first router:
 
 ## RSL Extension
 
-This repository includes an integrated Recursive Self-Learning (RSL) module.
+This repository includes a bounded Recursive Self-Learning module aligned with the supplied recursive self-improvement handbook and the JEV/TypeSafe structured evaluator example.
 
-The RSL loop is:
+The loop is:
 
-`generate -> evaluate -> enforce hard constraints -> retain best answer -> feed weaknesses into the next round -> persist reusable memory`
+`baseline -> generate candidates -> multi-signal evaluation -> retain top-k -> revise from concrete failures -> rollback-safe versioned memory`
 
-It does not retrain model weights. Learning is applied through prompts, strategy selection, and persisted memory.
+Implemented features:
+
+- measurable single-generation baseline;
+- per-round candidate search with `candidates_per_round` and `top_k`;
+- three controls: single generation, generate/evaluate/revise, and candidate search;
+- deterministic external checks for JSON, Python syntax, regex, required keys, and format;
+- optional held-out checks that are not shown to the generator;
+- local LLM judge plus `typesafe_sdk` `Choice`/`Noul` structured evaluation when configured;
+- output normalization with `raw_answer` and `postprocessed` audit fields;
+- model-call, token, and duration budgets;
+- score diversity, duplicate rate, calibration, and stop reasons;
+- low-trust memory: candidate becomes active only after repeated verified passes;
+- memory versioning and rollback endpoint;
+- full per-candidate traces in SQLite.
 
 Main endpoints:
 
-- `GET /v1/rsl/health`
 - `POST /v1/rsl/run`
 - `GET /v1/rsl/runs`
 - `GET /v1/rsl/runs/{run_id}`
 - `GET /v1/rsl/memory`
+- `POST /v1/rsl/memory/{memory_id}/rollback`
+- `GET /v1/rsl/health`
 
-The module uses the existing ModelRouter authentication and SQLite database. Tables `rsl_runs`, `rsl_rounds`, and `rsl_memories` are created automatically at startup.
-
-A local OpenAI-compatible provider can be configured with provider type `local`; the included `config/providers.yaml` points it at `http://127.0.0.1:11435/v1`.
+Detailed assignment notes and experiment results are in `docs/RSL_ASSIGNMENT.md`.
 
 Focused tests:
 
 ```bash
 python -m unittest tests.test_rsl_engine -v
+```
+
+Run the reproducible experiments while the router is active:
+
+```bash
+python scripts/run_rsl_experiment.py
 ```

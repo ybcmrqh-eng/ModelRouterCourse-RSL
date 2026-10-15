@@ -1,0 +1,516 @@
+[
+  {
+    "experiment": 1,
+    "task": "输出一个 JSON 对象，键为 name、age、skills；skills 必须是恰好 3 个字符串；不得输出 Markdown 代码围栏或解释。",
+    "result": {
+      "run_id": "rsl-afbc7f3a3efd4f17",
+      "created_at": "2026-10-15T11:49:37Z",
+      "completed_at": "2026-10-15T11:49:39Z",
+      "task": "输出一个 JSON 对象，键为 name、age、skills；skills 必须是恰好 3 个字符串；不得输出 Markdown 代码围栏或解释。",
+      "model": "qwen2.5-1.5b-instruct",
+      "evaluator_model": "qwen2.5-1.5b-instruct",
+      "status": "completed",
+      "baseline_score": 0.9700000000000001,
+      "initial_score": 0.9700000000000001,
+      "best_score": 0.9700000000000001,
+      "improvement": 0.0,
+      "verified_improvement": 0.0,
+      "verification_mode": "external_rules",
+      "best_round": 0,
+      "best_answer": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Data Analysis\", \"Machine Learning\"]\n}",
+      "rounds": [
+        {
+          "round_index": 0,
+          "strategy": "baseline_single_generation",
+          "answer": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Data Analysis\", \"Machine Learning\"]\n}",
+          "evaluation": {
+            "score": 0.9700000000000001,
+            "passed": true,
+            "feedback": "The JSON object is valid and meets the criteria. The skills array contains exactly 3 strings. Independent checks: PASS json valid; PASS required keys; PASS three skill strings; PASS json only Format checks: PASS no markdown fence; PASS contains name key; PASS contains age key; PASS contains skills key",
+            "strengths": [
+              "The JSON object is well-formed and meets the criteria.",
+              "The skills array contains exactly 3 strings."
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "name": 1.0,
+              "age": 1.0,
+              "skills": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 1.0,
+            "external_score": 1.0,
+            "process_score": 0.85,
+            "evidence": [
+              "PASS json valid",
+              "PASS required keys",
+              "PASS three skill strings",
+              "PASS json only",
+              "PASS no markdown fence",
+              "PASS contains name key",
+              "PASS contains age key",
+              "PASS contains skills key"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 359
+          },
+          "latency_ms": 750,
+          "accepted": true,
+          "memory_hits": [
+            "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+            "Best verified candidate was reached in round 0. Reuse this procedure for similar tasks, explicitly checking: Structured evaluation failed: evaluator did not return a JSON object"
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Data Analysis\", \"Machine Learning\"]\n}",
+              "raw_answer": null,
+              "postprocessed": false,
+              "evaluation": {
+                "score": 0.9700000000000001,
+                "passed": true,
+                "feedback": "The JSON object is valid and meets the criteria. The skills array contains exactly 3 strings. Independent checks: PASS json valid; PASS required keys; PASS three skill strings; PASS json only Format checks: PASS no markdown fence; PASS contains name key; PASS contains age key; PASS contains skills key",
+                "strengths": [
+                  "The JSON object is well-formed and meets the criteria.",
+                  "The skills array contains exactly 3 strings."
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "name": 1.0,
+                  "age": 1.0,
+                  "skills": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 1.0,
+                "external_score": 1.0,
+                "process_score": 0.85,
+                "evidence": [
+                  "PASS json valid",
+                  "PASS required keys",
+                  "PASS three skill strings",
+                  "PASS json only",
+                  "PASS no markdown fence",
+                  "PASS contains name key",
+                  "PASS contains age key",
+                  "PASS contains skills key"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 321,
+                "completion_tokens": 38,
+                "total_tokens": 359
+              },
+              "latency_ms": 750,
+              "accepted": true,
+              "is_best": true,
+              "content_hash": "7de600d185504a5b",
+              "diversity_from_best": 0.0,
+              "seed": 20261015
+            }
+          ],
+          "average_score": 0.9700000000000001,
+          "score_std": 0.0,
+          "diversity": 1.0,
+          "duplicate_rate": 0.0,
+          "best_candidate_index": 0
+        }
+      ],
+      "learned_strategy": "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+      "memory_used": 2,
+      "memory_written": false,
+      "memory_id": null,
+      "stopped_reason": "target_reached_at_baseline",
+      "verifier_version": "rsl-verifier-v2",
+      "prompt_version": "rsl-prompts-v2",
+      "controls": {
+        "single_generation": 0.97,
+        "generate_evaluate_revise": 0.97,
+        "candidate_search_topk": 0.97
+      },
+      "metrics": {
+        "baseline_score": 0.9700000000000001,
+        "best_score": 0.9700000000000001,
+        "improvement": 0.0,
+        "verified_improvement": 0.0,
+        "sample_efficiency": 0.0,
+        "mean_candidate_score": 0.9700000000000001,
+        "score_std": 0.0,
+        "mean_diversity": 1.0,
+        "mean_duplicate_rate": 0.0,
+        "holdout_score": 1.0,
+        "calibration_correlation": null,
+        "model_calls": 2,
+        "generation_calls": 1,
+        "evaluator_calls": 1,
+        "total_tokens": 754
+      },
+      "budget_used": {
+        "model_calls": 2,
+        "generation_calls": 1,
+        "evaluator_calls": 1,
+        "total_tokens": 754,
+        "elapsed_seconds": 1.985
+      },
+      "duration_ms": 1985
+    }
+  },
+  {
+    "experiment": 2,
+    "task": "只输出一条 SQLite 查询：从 users 表读取 age 大于参数 :min_age 的 name，并按 name 升序排序。不得使用字面数字 18，不得输出 Markdown 围栏或解释。",
+    "result": {
+      "run_id": "rsl-86d7fd00dd694187",
+      "created_at": "2026-10-15T11:49:39Z",
+      "completed_at": "2026-10-15T11:49:41Z",
+      "task": "只输出一条 SQLite 查询：从 users 表读取 age 大于参数 :min_age 的 name，并按 name 升序排序。不得使用字面数字 18，不得输出 Markdown 围栏或解释。",
+      "model": "qwen2.5-1.5b-instruct",
+      "evaluator_model": "qwen2.5-1.5b-instruct",
+      "status": "completed",
+      "baseline_score": 0.9700000000000001,
+      "initial_score": 0.9700000000000001,
+      "best_score": 0.9700000000000001,
+      "improvement": 0.0,
+      "verified_improvement": 0.0,
+      "verification_mode": "external_rules",
+      "best_round": 0,
+      "best_answer": "SELECT name FROM users WHERE age > :min_age ORDER BY name ASC",
+      "rounds": [
+        {
+          "round_index": 0,
+          "strategy": "baseline_single_generation",
+          "answer": "SELECT name FROM users WHERE age > :min_age ORDER BY name ASC",
+          "evaluation": {
+            "score": 0.9700000000000001,
+            "passed": true,
+            "feedback": "The query is valid and meets all the criteria. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: PASS no markdown fence; PASS uses parameter; PASS no literal 18",
+            "strengths": [
+              "Correctly identifies the required fields and constraints.",
+              "Uses the :min_age parameter as specified.",
+              "Includes the WHERE clause with the age condition.",
+              "Uses the ORDER BY clause with the name column.",
+              "Does not use any unsupported or unsafe elements."
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "required_fields": 1.0,
+              "correct_syntax": 1.0,
+              "parameter_usage": 1.0,
+              "age_condition": 1.0,
+              "order_clause": 1.0,
+              "no_unsafe_elements": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 1.0,
+            "external_score": 1.0,
+            "process_score": 0.85,
+            "evidence": [
+              "PASS select name from users",
+              "PASS parameter present",
+              "PASS where present",
+              "PASS order by name",
+              "PASS no literal 18",
+              "PASS no markdown fence",
+              "PASS uses parameter",
+              "PASS no literal 18"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 356
+          },
+          "latency_ms": 235,
+          "accepted": true,
+          "memory_hits": [
+            "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+            "Best verified candidate was reached in round 0. Reuse this procedure for similar tasks, explicitly checking: Structured evaluation failed: evaluator did not return a JSON object"
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "SELECT name FROM users WHERE age > :min_age ORDER BY name ASC",
+              "raw_answer": null,
+              "postprocessed": false,
+              "evaluation": {
+                "score": 0.9700000000000001,
+                "passed": true,
+                "feedback": "The query is valid and meets all the criteria. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: PASS no markdown fence; PASS uses parameter; PASS no literal 18",
+                "strengths": [
+                  "Correctly identifies the required fields and constraints.",
+                  "Uses the :min_age parameter as specified.",
+                  "Includes the WHERE clause with the age condition.",
+                  "Uses the ORDER BY clause with the name column.",
+                  "Does not use any unsupported or unsafe elements."
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "required_fields": 1.0,
+                  "correct_syntax": 1.0,
+                  "parameter_usage": 1.0,
+                  "age_condition": 1.0,
+                  "order_clause": 1.0,
+                  "no_unsafe_elements": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 1.0,
+                "external_score": 1.0,
+                "process_score": 0.85,
+                "evidence": [
+                  "PASS select name from users",
+                  "PASS parameter present",
+                  "PASS where present",
+                  "PASS order by name",
+                  "PASS no literal 18",
+                  "PASS no markdown fence",
+                  "PASS uses parameter",
+                  "PASS no literal 18"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 336,
+                "completion_tokens": 20,
+                "total_tokens": 356
+              },
+              "latency_ms": 235,
+              "accepted": true,
+              "is_best": true,
+              "content_hash": "42f5172dbc77ad54",
+              "diversity_from_best": 0.0,
+              "seed": 20261015
+            }
+          ],
+          "average_score": 0.9700000000000001,
+          "score_std": 0.0,
+          "diversity": 1.0,
+          "duplicate_rate": 0.0,
+          "best_candidate_index": 0
+        }
+      ],
+      "learned_strategy": "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+      "memory_used": 2,
+      "memory_written": false,
+      "memory_id": null,
+      "stopped_reason": "target_reached_at_baseline",
+      "verifier_version": "rsl-verifier-v2",
+      "prompt_version": "rsl-prompts-v2",
+      "controls": {
+        "single_generation": 0.97,
+        "generate_evaluate_revise": 0.97,
+        "candidate_search_topk": 0.97
+      },
+      "metrics": {
+        "baseline_score": 0.9700000000000001,
+        "best_score": 0.9700000000000001,
+        "improvement": 0.0,
+        "verified_improvement": 0.0,
+        "sample_efficiency": 0.0,
+        "mean_candidate_score": 0.9700000000000001,
+        "score_std": 0.0,
+        "mean_diversity": 1.0,
+        "mean_duplicate_rate": 0.0,
+        "holdout_score": 1.0,
+        "calibration_correlation": null,
+        "model_calls": 2,
+        "generation_calls": 1,
+        "evaluator_calls": 1,
+        "total_tokens": 802
+      },
+      "budget_used": {
+        "model_calls": 2,
+        "generation_calls": 1,
+        "evaluator_calls": 1,
+        "total_tokens": 802,
+        "elapsed_seconds": 2.0
+      },
+      "duration_ms": 2000
+    }
+  },
+  {
+    "experiment": 3,
+    "task": "只输出 Python 代码：实现 safe_divide(a: float, b: float) -> float | None；b 为 0 时返回 None；包含 docstring；不得输出 Markdown 围栏或解释。",
+    "result": {
+      "run_id": "rsl-a7b2d1724ac447a6",
+      "created_at": "2026-10-15T11:49:41Z",
+      "completed_at": "2026-10-15T11:49:43Z",
+      "task": "只输出 Python 代码：实现 safe_divide(a: float, b: float) -> float | None；b 为 0 时返回 None；包含 docstring；不得输出 Markdown 围栏或解释。",
+      "model": "qwen2.5-1.5b-instruct",
+      "evaluator_model": "qwen2.5-1.5b-instruct",
+      "status": "completed",
+      "baseline_score": 0.9700000000000001,
+      "initial_score": 0.9700000000000001,
+      "best_score": 0.9700000000000001,
+      "improvement": 0.0,
+      "verified_improvement": 0.0,
+      "verification_mode": "external_rules",
+      "best_round": 0,
+      "best_answer": "def safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is 0.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b",
+      "rounds": [
+        {
+          "round_index": 0,
+          "strategy": "baseline_single_generation",
+          "answer": "def safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is 0.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b",
+          "evaluation": {
+            "score": 0.9700000000000001,
+            "passed": true,
+            "feedback": "The candidate code is compliant with the task requirements. It includes a docstring, type annotations, and handles division by zero correctly. However, it lacks the Markdown formatting. Independent checks: PASS python syntax; PASS def present; PASS type annotations; PASS zero returns None Format checks: PASS no markdown fence; PASS def present; PASS docstring present",
+            "strengths": [
+              "Correctly implements safe_divide",
+              "Includes docstring and type annotations",
+              "Handles division by zero correctly"
+            ],
+            "weaknesses": [
+              "Lacks Markdown formatting",
+              "Could be improved by adding Markdown formatting"
+            ],
+            "dimension_scores": {
+              "code_compliance": 0.9,
+              "docstring": 0.9,
+              "type_annotations": 0.9,
+              "division_by_zero": 0.9,
+              "markdown_formatting": 0.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 1.0,
+            "external_score": 1.0,
+            "process_score": 0.85,
+            "evidence": [
+              "PASS python syntax",
+              "PASS def present",
+              "PASS type annotations",
+              "PASS zero returns None",
+              "PASS no markdown fence",
+              "PASS def present",
+              "PASS docstring present"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 384
+          },
+          "latency_ms": 641,
+          "accepted": true,
+          "memory_hits": [
+            "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+            "Best verified candidate was reached in round 0. Reuse this procedure for similar tasks, explicitly checking: Structured evaluation failed: evaluator did not return a JSON object"
+          ],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "def safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is 0.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b",
+              "raw_answer": null,
+              "postprocessed": false,
+              "evaluation": {
+                "score": 0.9700000000000001,
+                "passed": true,
+                "feedback": "The candidate code is compliant with the task requirements. It includes a docstring, type annotations, and handles division by zero correctly. However, it lacks the Markdown formatting. Independent checks: PASS python syntax; PASS def present; PASS type annotations; PASS zero returns None Format checks: PASS no markdown fence; PASS def present; PASS docstring present",
+                "strengths": [
+                  "Correctly implements safe_divide",
+                  "Includes docstring and type annotations",
+                  "Handles division by zero correctly"
+                ],
+                "weaknesses": [
+                  "Lacks Markdown formatting",
+                  "Could be improved by adding Markdown formatting"
+                ],
+                "dimension_scores": {
+                  "code_compliance": 0.9,
+                  "docstring": 0.9,
+                  "type_annotations": 0.9,
+                  "division_by_zero": 0.9,
+                  "markdown_formatting": 0.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 1.0,
+                "external_score": 1.0,
+                "process_score": 0.85,
+                "evidence": [
+                  "PASS python syntax",
+                  "PASS def present",
+                  "PASS type annotations",
+                  "PASS zero returns None",
+                  "PASS no markdown fence",
+                  "PASS def present",
+                  "PASS docstring present"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 325,
+                "completion_tokens": 59,
+                "total_tokens": 384
+              },
+              "latency_ms": 641,
+              "accepted": true,
+              "is_best": true,
+              "content_hash": "19ee7f5a62bd1cf4",
+              "diversity_from_best": 0.0,
+              "seed": 20261015
+            }
+          ],
+          "average_score": 0.9700000000000001,
+          "score_std": 0.0,
+          "diversity": 1.0,
+          "duplicate_rate": 0.0,
+          "best_candidate_index": 0
+        }
+      ],
+      "learned_strategy": "Best verified candidate was reached in round 0. Reuse this procedure for similar tasks, explicitly checking: Lacks Markdown formatting; Could be improved by adding Markdown formatting",
+      "memory_used": 2,
+      "memory_written": false,
+      "memory_id": null,
+      "stopped_reason": "target_reached_at_baseline",
+      "verifier_version": "rsl-verifier-v2",
+      "prompt_version": "rsl-prompts-v2",
+      "controls": {
+        "single_generation": 0.97,
+        "generate_evaluate_revise": 0.97,
+        "candidate_search_topk": 0.97
+      },
+      "metrics": {
+        "baseline_score": 0.9700000000000001,
+        "best_score": 0.9700000000000001,
+        "improvement": 0.0,
+        "verified_improvement": 0.0,
+        "sample_efficiency": 0.0,
+        "mean_candidate_score": 0.9700000000000001,
+        "score_std": 0.0,
+        "mean_diversity": 1.0,
+        "mean_duplicate_rate": 0.0,
+        "holdout_score": 1.0,
+        "calibration_correlation": null,
+        "model_calls": 2,
+        "generation_calls": 1,
+        "evaluator_calls": 1,
+        "total_tokens": 883
+      },
+      "budget_used": {
+        "model_calls": 2,
+        "generation_calls": 1,
+        "evaluator_calls": 1,
+        "total_tokens": 883,
+        "elapsed_seconds": 2.547
+      },
+      "duration_ms": 2547
+    }
+  }
+]

@@ -31,6 +31,7 @@ class ChatRequest(BaseModel):
     stream: bool = False
     temperature: float | None = None
     max_tokens: int | None = None
+    seed: int | None = None
     top_p: float | None = None
     frequency_penalty: float | None = None
     presence_penalty: float | None = None

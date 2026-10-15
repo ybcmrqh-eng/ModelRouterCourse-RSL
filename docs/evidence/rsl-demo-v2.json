@@ -1,0 +1,160 @@
+{
+  "run_id": "rsl-afbc7f3a3efd4f17",
+  "created_at": "2026-10-15T11:49:37Z",
+  "completed_at": "2026-10-15T11:49:39Z",
+  "task": "输出一个 JSON 对象，键为 name、age、skills；skills 必须是恰好 3 个字符串；不得输出 Markdown 代码围栏或解释。",
+  "model": "qwen2.5-1.5b-instruct",
+  "evaluator_model": "qwen2.5-1.5b-instruct",
+  "status": "completed",
+  "baseline_score": 0.9700000000000001,
+  "initial_score": 0.9700000000000001,
+  "best_score": 0.9700000000000001,
+  "improvement": 0.0,
+  "verified_improvement": 0.0,
+  "verification_mode": "external_rules",
+  "best_round": 0,
+  "best_answer": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Data Analysis\", \"Machine Learning\"]\n}",
+  "rounds": [
+    {
+      "round_index": 0,
+      "strategy": "baseline_single_generation",
+      "answer": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Data Analysis\", \"Machine Learning\"]\n}",
+      "evaluation": {
+        "score": 0.9700000000000001,
+        "passed": true,
+        "feedback": "The JSON object is valid and meets the criteria. The skills array contains exactly 3 strings. Independent checks: PASS json valid; PASS required keys; PASS three skill strings; PASS json only Format checks: PASS no markdown fence; PASS contains name key; PASS contains age key; PASS contains skills key",
+        "strengths": [
+          "The JSON object is well-formed and meets the criteria.",
+          "The skills array contains exactly 3 strings."
+        ],
+        "weaknesses": [],
+        "dimension_scores": {
+          "name": 1.0,
+          "age": 1.0,
+          "skills": 1.0
+        },
+        "evaluator_score": 0.85,
+        "format_score": 1.0,
+        "external_score": 1.0,
+        "process_score": 0.85,
+        "evidence": [
+          "PASS json valid",
+          "PASS required keys",
+          "PASS three skill strings",
+          "PASS json only",
+          "PASS no markdown fence",
+          "PASS contains name key",
+          "PASS contains age key",
+          "PASS contains skills key"
+        ],
+        "safety_flags": [],
+        "evaluator_backends": [
+          "local"
+        ]
+      },
+      "usage": {
+        "total_tokens": 359
+      },
+      "latency_ms": 750,
+      "accepted": true,
+      "memory_hits": [
+        "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+        "Best verified candidate was reached in round 0. Reuse this procedure for similar tasks, explicitly checking: Structured evaluation failed: evaluator did not return a JSON object"
+      ],
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "answer": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Data Analysis\", \"Machine Learning\"]\n}",
+          "raw_answer": null,
+          "postprocessed": false,
+          "evaluation": {
+            "score": 0.9700000000000001,
+            "passed": true,
+            "feedback": "The JSON object is valid and meets the criteria. The skills array contains exactly 3 strings. Independent checks: PASS json valid; PASS required keys; PASS three skill strings; PASS json only Format checks: PASS no markdown fence; PASS contains name key; PASS contains age key; PASS contains skills key",
+            "strengths": [
+              "The JSON object is well-formed and meets the criteria.",
+              "The skills array contains exactly 3 strings."
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "name": 1.0,
+              "age": 1.0,
+              "skills": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 1.0,
+            "external_score": 1.0,
+            "process_score": 0.85,
+            "evidence": [
+              "PASS json valid",
+              "PASS required keys",
+              "PASS three skill strings",
+              "PASS json only",
+              "PASS no markdown fence",
+              "PASS contains name key",
+              "PASS contains age key",
+              "PASS contains skills key"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "prompt_tokens": 321,
+            "completion_tokens": 38,
+            "total_tokens": 359
+          },
+          "latency_ms": 750,
+          "accepted": true,
+          "is_best": true,
+          "content_hash": "7de600d185504a5b",
+          "diversity_from_best": 0.0,
+          "seed": 20261015
+        }
+      ],
+      "average_score": 0.9700000000000001,
+      "score_std": 0.0,
+      "diversity": 1.0,
+      "duplicate_rate": 0.0,
+      "best_candidate_index": 0
+    }
+  ],
+  "learned_strategy": "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+  "memory_used": 2,
+  "memory_written": false,
+  "memory_id": null,
+  "stopped_reason": "target_reached_at_baseline",
+  "verifier_version": "rsl-verifier-v2",
+  "prompt_version": "rsl-prompts-v2",
+  "controls": {
+    "single_generation": 0.97,
+    "generate_evaluate_revise": 0.97,
+    "candidate_search_topk": 0.97
+  },
+  "metrics": {
+    "baseline_score": 0.9700000000000001,
+    "best_score": 0.9700000000000001,
+    "improvement": 0.0,
+    "verified_improvement": 0.0,
+    "sample_efficiency": 0.0,
+    "mean_candidate_score": 0.9700000000000001,
+    "score_std": 0.0,
+    "mean_diversity": 1.0,
+    "mean_duplicate_rate": 0.0,
+    "holdout_score": 1.0,
+    "calibration_correlation": null,
+    "model_calls": 2,
+    "generation_calls": 1,
+    "evaluator_calls": 1,
+    "total_tokens": 754
+  },
+  "budget_used": {
+    "model_calls": 2,
+    "generation_calls": 1,
+    "evaluator_calls": 1,
+    "total_tokens": 754,
+    "elapsed_seconds": 1.985
+  },
+  "duration_ms": 1985
+}

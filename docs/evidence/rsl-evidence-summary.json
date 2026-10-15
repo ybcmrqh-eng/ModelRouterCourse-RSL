@@ -1,0 +1,66 @@
+{
+  "handbook": "recursive-self-improvement-handbook.pdf",
+  "jev_reference": "E:/aicourse/JEV/test_jev.py",
+  "latest_experiment_file": "docs\\evidence\\rsl-experiment-20261015T114936Z.json",
+  "deterministic_experiments": [
+    {
+      "experiment": 1,
+      "task": "输出一个 JSON 对象，键为 name、age、skills；skills 必须是恰好 3 个字符串；不得输出 Markdown 代码围栏或解释。",
+      "baseline_score": 0.9700000000000001,
+      "best_score": 0.9700000000000001,
+      "verified_improvement": 0.0,
+      "stopped_reason": "target_reached_at_baseline",
+      "controls": {
+        "single_generation": 0.97,
+        "generate_evaluate_revise": 0.97,
+        "candidate_search_topk": 0.97
+      }
+    },
+    {
+      "experiment": 2,
+      "task": "只输出一条 SQLite 查询：从 users 表读取 age 大于参数 :min_age 的 name，并按 name 升序排序。不得使用字面数字 18，不得输出 Markdown 围栏或解释。",
+      "baseline_score": 0.9700000000000001,
+      "best_score": 0.9700000000000001,
+      "verified_improvement": 0.0,
+      "stopped_reason": "target_reached_at_baseline",
+      "controls": {
+        "single_generation": 0.97,
+        "generate_evaluate_revise": 0.97,
+        "candidate_search_topk": 0.97
+      }
+    },
+    {
+      "experiment": 3,
+      "task": "只输出 Python 代码：实现 safe_divide(a: float, b: float) -> float | None；b 为 0 时返回 None；包含 docstring；不得输出 Markdown 围栏或解释。",
+      "baseline_score": 0.9700000000000001,
+      "best_score": 0.9700000000000001,
+      "verified_improvement": 0.0,
+      "stopped_reason": "target_reached_at_baseline",
+      "controls": {
+        "single_generation": 0.97,
+        "generate_evaluate_revise": 0.97,
+        "candidate_search_topk": 0.97
+      }
+    }
+  ],
+  "verified_memory_promotion": {
+    "first_run_memory_id": 3,
+    "second_run_memory_id": 4,
+    "both_written": true
+  },
+  "memory_retrieval_and_rollback": {
+    "memory_used": 1,
+    "rollback_status": "rolled_back",
+    "rollback_reason": "evidence_demo_rollback",
+    "active_memory_ids": [
+      5,
+      3
+    ]
+  },
+  "documented_failure_case": {
+    "problem": "Before output normalization, all three deterministic tasks failed JSON/Python checks because the model wrapped correct content in Markdown fences.",
+    "observation": "The engine did not mark these runs as verified improvements.",
+    "fix": "Added traceable candidate sanitization with raw_answer and postprocessed fields, keeping external checks independent.",
+    "result_after_fix": "All three tasks reached target at baseline after normalization, so no further candidate search was required."
+  }
+}

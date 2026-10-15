@@ -1,0 +1,1086 @@
+[
+  {
+    "experiment": 1,
+    "task": "输出一个 JSON 对象，键为 name、age、skills；skills 必须是恰好 3 个字符串；不得输出 Markdown 代码围栏或解释。",
+    "result": {
+      "run_id": "rsl-12c08cd1b53d4fe7",
+      "created_at": "2026-10-15T11:41:20Z",
+      "completed_at": "2026-10-15T11:41:27Z",
+      "task": "输出一个 JSON 对象，键为 name、age、skills；skills 必须是恰好 3 个字符串；不得输出 Markdown 代码围栏或解释。",
+      "model": "qwen2.5-1.5b-instruct",
+      "evaluator_model": "qwen2.5-1.5b-instruct",
+      "status": "completed",
+      "baseline_score": 0.62,
+      "initial_score": 0.62,
+      "best_score": 0.62,
+      "improvement": 0.0,
+      "verified_improvement": 0.0,
+      "verification_mode": "external_rules",
+      "best_round": 0,
+      "best_answer": "```json\n{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Web Development\", \"Data Analysis\"]\n}\n```",
+      "rounds": [
+        {
+          "round_index": 0,
+          "strategy": "baseline_single_generation",
+          "answer": "```json\n{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Web Development\", \"Data Analysis\"]\n}\n```",
+          "evaluation": {
+            "score": 0.62,
+            "passed": false,
+            "feedback": "The JSON object is valid and meets the criteria. It includes all required fields: name, age, and skills. The skills field contains exactly three strings. Independent checks: FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0); PASS required keys; PASS three skill strings; FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$' Format checks: FAIL no markdown fence: expected not to contain '```'; PASS contains name key; PASS contains age key; PASS contains skills key",
+            "strengths": [
+              "Compliance with task requirements",
+              "Correct format"
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "name": 1.0,
+              "age": 1.0,
+              "skills": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 0.75,
+            "external_score": 0.5,
+            "process_score": 0.85,
+            "evidence": [
+              "FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0)",
+              "PASS required keys",
+              "PASS three skill strings",
+              "FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$'",
+              "FAIL no markdown fence: expected not to contain '```'",
+              "PASS contains name key",
+              "PASS contains age key",
+              "PASS contains skills key"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 288
+          },
+          "latency_ms": 750,
+          "accepted": true,
+          "memory_hits": [],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "```json\n{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Web Development\", \"Data Analysis\"]\n}\n```",
+              "evaluation": {
+                "score": 0.62,
+                "passed": false,
+                "feedback": "The JSON object is valid and meets the criteria. It includes all required fields: name, age, and skills. The skills field contains exactly three strings. Independent checks: FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0); PASS required keys; PASS three skill strings; FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$' Format checks: FAIL no markdown fence: expected not to contain '```'; PASS contains name key; PASS contains age key; PASS contains skills key",
+                "strengths": [
+                  "Compliance with task requirements",
+                  "Correct format"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "name": 1.0,
+                  "age": 1.0,
+                  "skills": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.75,
+                "external_score": 0.5,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0)",
+                  "PASS required keys",
+                  "PASS three skill strings",
+                  "FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$'",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS contains name key",
+                  "PASS contains age key",
+                  "PASS contains skills key"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 250,
+                "completion_tokens": 38,
+                "total_tokens": 288
+              },
+              "latency_ms": 750,
+              "accepted": true,
+              "is_best": true,
+              "content_hash": "c33cc149f0227e68",
+              "diversity_from_best": 0.0,
+              "seed": 20261015
+            }
+          ],
+          "average_score": 0.62,
+          "score_std": 0.0,
+          "diversity": 1.0,
+          "duplicate_rate": 0.0,
+          "best_candidate_index": 0
+        },
+        {
+          "round_index": 1,
+          "strategy": "candidate_search_topk",
+          "answer": "```json\n{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Web Development\", \"Data Analysis\"]\n}\n```",
+          "evaluation": {
+            "score": 0.62,
+            "passed": false,
+            "feedback": "The JSON object is valid and meets the criteria. It includes all required fields: name, age, and skills. The skills field contains exactly three strings. Independent checks: FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0); PASS required keys; PASS three skill strings; FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$' Format checks: FAIL no markdown fence: expected not to contain '```'; PASS contains name key; PASS contains age key; PASS contains skills key",
+            "strengths": [
+              "Compliance with task requirements",
+              "Correct format"
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "name": 1.0,
+              "age": 1.0,
+              "skills": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 0.75,
+            "external_score": 0.5,
+            "process_score": 0.85,
+            "evidence": [
+              "FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0)",
+              "PASS required keys",
+              "PASS three skill strings",
+              "FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$'",
+              "FAIL no markdown fence: expected not to contain '```'",
+              "PASS contains name key",
+              "PASS contains age key",
+              "PASS contains skills key"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 1682
+          },
+          "latency_ms": 1312,
+          "accepted": false,
+          "memory_hits": [],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "```json\n{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"skills\": [\"Python\", \"Web Development\", \"Data Analysis\"]\n}\n```",
+              "evaluation": {
+                "score": 0.62,
+                "passed": false,
+                "feedback": "The JSON object is valid and meets the criteria. It includes all required fields: name, age, and skills. The skills field contains exactly three strings. Independent checks: FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0); PASS required keys; PASS three skill strings; FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$' Format checks: FAIL no markdown fence: expected not to contain '```'; PASS contains name key; PASS contains age key; PASS contains skills key",
+                "strengths": [
+                  "Compliance with task requirements",
+                  "Correct format"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "name": 1.0,
+                  "age": 1.0,
+                  "skills": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.75,
+                "external_score": 0.5,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0)",
+                  "PASS required keys",
+                  "PASS three skill strings",
+                  "FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$'",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS contains name key",
+                  "PASS contains age key",
+                  "PASS contains skills key"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 523,
+                "completion_tokens": 38,
+                "total_tokens": 561
+              },
+              "latency_ms": 485,
+              "accepted": false,
+              "is_best": true,
+              "content_hash": "c33cc149f0227e68",
+              "diversity_from_best": 0.0,
+              "seed": 20261115
+            },
+            {
+              "candidate_index": 1,
+              "answer": "```json\n{\n  \"name\": \"Jane Smith\",\n  \"age\": 28,\n  \"skills\": [\"JavaScript\", \"Data Science\", \"Project Management\"]\n}\n```",
+              "evaluation": {
+                "score": 0.62,
+                "passed": false,
+                "feedback": "The JSON object is valid and meets the criteria. It includes all required fields: name, age, and skills. The skills field contains exactly three strings. Independent checks: FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0); PASS required keys; PASS three skill strings; FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$' Format checks: FAIL no markdown fence: expected not to contain '```'; PASS contains name key; PASS contains age key; PASS contains skills key",
+                "strengths": [
+                  "Compliance with task requirements",
+                  "Correct format"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "name": 1.0,
+                  "age": 1.0,
+                  "skills": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.75,
+                "external_score": 0.5,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0)",
+                  "PASS required keys",
+                  "PASS three skill strings",
+                  "FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$'",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS contains name key",
+                  "PASS contains age key",
+                  "PASS contains skills key"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 523,
+                "completion_tokens": 38,
+                "total_tokens": 561
+              },
+              "latency_ms": 422,
+              "accepted": false,
+              "is_best": false,
+              "content_hash": "ea07e070831944e8",
+              "diversity_from_best": 0.736842105263158,
+              "seed": 20261116
+            },
+            {
+              "candidate_index": 2,
+              "answer": "```json\n{\n  \"name\": \"Jane Smith\",\n  \"age\": 28,\n  \"skills\": [\"JavaScript\", \"Mobile Development\", \"AI\"]\n}\n```",
+              "evaluation": {
+                "score": 0.62,
+                "passed": false,
+                "feedback": "The JSON object is valid and meets the criteria. It includes all required fields: name, age, and skills. The skills field contains exactly three strings. Independent checks: FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0); PASS required keys; PASS three skill strings; FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$' Format checks: FAIL no markdown fence: expected not to contain '```'; PASS contains name key; PASS contains age key; PASS contains skills key",
+                "strengths": [
+                  "Compliance with task requirements",
+                  "Correct format"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "name": 1.0,
+                  "age": 1.0,
+                  "skills": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.75,
+                "external_score": 0.5,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL json valid: invalid JSON: Expecting value: line 1 column 1 (char 0)",
+                  "PASS required keys",
+                  "PASS three skill strings",
+                  "FAIL json only: regex did not match: '^\\\\s*\\\\{[\\\\s\\\\S]*\\\\}\\\\s*$'",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS contains name key",
+                  "PASS contains age key",
+                  "PASS contains skills key"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 523,
+                "completion_tokens": 37,
+                "total_tokens": 560
+              },
+              "latency_ms": 405,
+              "accepted": false,
+              "is_best": false,
+              "content_hash": "44a7567562a0b899",
+              "diversity_from_best": 0.7222222222222222,
+              "seed": 20261117
+            }
+          ],
+          "average_score": 0.62,
+          "score_std": 0.0,
+          "diversity": 0.6419103313840155,
+          "duplicate_rate": 0.0,
+          "best_candidate_index": 0
+        }
+      ],
+      "learned_strategy": "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+      "memory_used": 0,
+      "memory_written": false,
+      "memory_id": null,
+      "stopped_reason": "no_improvement",
+      "verifier_version": "rsl-verifier-v2",
+      "prompt_version": "rsl-prompts-v2",
+      "controls": {
+        "single_generation": 0.62,
+        "generate_evaluate_revise": 0.62,
+        "candidate_search_topk": 0.62
+      },
+      "metrics": {
+        "baseline_score": 0.62,
+        "best_score": 0.62,
+        "improvement": 0.0,
+        "verified_improvement": 0.0,
+        "sample_efficiency": 0.0,
+        "mean_candidate_score": 0.62,
+        "score_std": 0.0,
+        "mean_diversity": 0.8209551656920078,
+        "mean_duplicate_rate": 0.0,
+        "holdout_score": 1.0,
+        "calibration_correlation": null,
+        "model_calls": 8,
+        "generation_calls": 4,
+        "evaluator_calls": 4,
+        "total_tokens": 3573
+      },
+      "budget_used": {
+        "model_calls": 8,
+        "generation_calls": 4,
+        "evaluator_calls": 4,
+        "total_tokens": 3573,
+        "elapsed_seconds": 6.86
+      },
+      "duration_ms": 6860
+    }
+  },
+  {
+    "experiment": 2,
+    "task": "只输出一条 SQLite 查询：从 users 表读取 age 大于参数 :min_age 的 name，并按 name 升序排序。不得使用字面数字 18，不得输出 Markdown 围栏或解释。",
+    "result": {
+      "run_id": "rsl-d1d5078602d942f7",
+      "created_at": "2026-10-15T11:41:27Z",
+      "completed_at": "2026-10-15T11:41:35Z",
+      "task": "只输出一条 SQLite 查询：从 users 表读取 age 大于参数 :min_age 的 name，并按 name 升序排序。不得使用字面数字 18，不得输出 Markdown 围栏或解释。",
+      "model": "qwen2.5-1.5b-instruct",
+      "evaluator_model": "qwen2.5-1.5b-instruct",
+      "status": "completed",
+      "baseline_score": 0.9033333333333333,
+      "initial_score": 0.9033333333333333,
+      "best_score": 0.9033333333333333,
+      "improvement": 0.0,
+      "verified_improvement": 0.0,
+      "verification_mode": "external_rules",
+      "best_round": 0,
+      "best_answer": "```sql\nSELECT name FROM users WHERE age > :min_age ORDER BY name ASC\n```",
+      "rounds": [
+        {
+          "round_index": 0,
+          "strategy": "baseline_single_generation",
+          "answer": "```sql\nSELECT name FROM users WHERE age > :min_age ORDER BY name ASC\n```",
+          "evaluation": {
+            "score": 0.9033333333333333,
+            "passed": false,
+            "feedback": "The query is valid and meets the criteria. It correctly selects the name from the users table where the age is greater than the :min_age parameter, orders the results by name in ascending order, and avoids using the literal number 18. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: FAIL no markdown fence: expected not to contain '```'; PASS uses parameter; PASS no literal 18",
+            "strengths": [
+              "Correctly uses the :min_age parameter",
+              "Correctly orders the results by name in ascending order",
+              "Avoids using the literal number 18"
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "compliance": 1.0,
+              "correctness": 1.0,
+              "efficiency": 1.0,
+              "security": 1.0,
+              "usability": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 0.6666666666666666,
+            "external_score": 1.0,
+            "process_score": 0.85,
+            "evidence": [
+              "PASS select name from users",
+              "PASS parameter present",
+              "PASS where present",
+              "PASS order by name",
+              "PASS no literal 18",
+              "FAIL no markdown fence: expected not to contain '```'",
+              "PASS uses parameter",
+              "PASS no literal 18"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 285
+          },
+          "latency_ms": 313,
+          "accepted": true,
+          "memory_hits": [],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "```sql\nSELECT name FROM users WHERE age > :min_age ORDER BY name ASC\n```",
+              "evaluation": {
+                "score": 0.9033333333333333,
+                "passed": false,
+                "feedback": "The query is valid and meets the criteria. It correctly selects the name from the users table where the age is greater than the :min_age parameter, orders the results by name in ascending order, and avoids using the literal number 18. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: FAIL no markdown fence: expected not to contain '```'; PASS uses parameter; PASS no literal 18",
+                "strengths": [
+                  "Correctly uses the :min_age parameter",
+                  "Correctly orders the results by name in ascending order",
+                  "Avoids using the literal number 18"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "compliance": 1.0,
+                  "correctness": 1.0,
+                  "efficiency": 1.0,
+                  "security": 1.0,
+                  "usability": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 1.0,
+                "process_score": 0.85,
+                "evidence": [
+                  "PASS select name from users",
+                  "PASS parameter present",
+                  "PASS where present",
+                  "PASS order by name",
+                  "PASS no literal 18",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS uses parameter",
+                  "PASS no literal 18"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 265,
+                "completion_tokens": 20,
+                "total_tokens": 285
+              },
+              "latency_ms": 313,
+              "accepted": true,
+              "is_best": true,
+              "content_hash": "c35fd3c75bf03a5f",
+              "diversity_from_best": 0.0,
+              "seed": 20261015
+            }
+          ],
+          "average_score": 0.9033333333333333,
+          "score_std": 0.0,
+          "diversity": 1.0,
+          "duplicate_rate": 0.0,
+          "best_candidate_index": 0
+        },
+        {
+          "round_index": 1,
+          "strategy": "candidate_search_topk",
+          "answer": "```sql\nSELECT name FROM users WHERE age > :min_age ORDER BY name ASC\n```",
+          "evaluation": {
+            "score": 0.9033333333333333,
+            "passed": false,
+            "feedback": "The query is valid and meets the criteria. It correctly selects the name from the users table where the age is greater than the :min_age parameter, orders the results by name in ascending order, and avoids using the literal number 18. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: FAIL no markdown fence: expected not to contain '```'; PASS uses parameter; PASS no literal 18",
+            "strengths": [
+              "Correctly uses the :min_age parameter",
+              "Correctly orders the results by name in ascending order",
+              "Avoids using the literal number 18"
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "compliance": 1.0,
+              "correctness": 1.0,
+              "efficiency": 1.0,
+              "security": 1.0,
+              "usability": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 0.6666666666666666,
+            "external_score": 1.0,
+            "process_score": 0.85,
+            "evidence": [
+              "PASS select name from users",
+              "PASS parameter present",
+              "PASS where present",
+              "PASS order by name",
+              "PASS no literal 18",
+              "FAIL no markdown fence: expected not to contain '```'",
+              "PASS uses parameter",
+              "PASS no literal 18"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 1416
+          },
+          "latency_ms": 746,
+          "accepted": false,
+          "memory_hits": [],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "```sql\nSELECT name FROM users WHERE age > :min_age ORDER BY name ASC\n```",
+              "evaluation": {
+                "score": 0.9033333333333333,
+                "passed": false,
+                "feedback": "The query is valid and meets the criteria. It correctly selects the name from the users table where the age is greater than the :min_age parameter, orders the results by name in ascending order, and avoids using the literal number 18. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: FAIL no markdown fence: expected not to contain '```'; PASS uses parameter; PASS no literal 18",
+                "strengths": [
+                  "Correctly uses the :min_age parameter",
+                  "Correctly orders the results by name in ascending order",
+                  "Avoids using the literal number 18"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "compliance": 1.0,
+                  "correctness": 1.0,
+                  "efficiency": 1.0,
+                  "security": 1.0,
+                  "usability": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 1.0,
+                "process_score": 0.85,
+                "evidence": [
+                  "PASS select name from users",
+                  "PASS parameter present",
+                  "PASS where present",
+                  "PASS order by name",
+                  "PASS no literal 18",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS uses parameter",
+                  "PASS no literal 18"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 452,
+                "completion_tokens": 20,
+                "total_tokens": 472
+              },
+              "latency_ms": 280,
+              "accepted": false,
+              "is_best": true,
+              "content_hash": "c35fd3c75bf03a5f",
+              "diversity_from_best": 0.0,
+              "seed": 20261115
+            },
+            {
+              "candidate_index": 1,
+              "answer": "```sql\nSELECT name FROM users WHERE age > :min_age ORDER BY name ASC\n```",
+              "evaluation": {
+                "score": 0.9033333333333333,
+                "passed": false,
+                "feedback": "The query is valid and meets the criteria. It correctly selects the name from the users table where the age is greater than the :min_age parameter, orders the results by name in ascending order, and avoids using the literal number 18. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: FAIL no markdown fence: expected not to contain '```'; PASS uses parameter; PASS no literal 18",
+                "strengths": [
+                  "Correctly uses the :min_age parameter",
+                  "Correctly orders the results by name in ascending order",
+                  "Avoids using the literal number 18"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "compliance": 1.0,
+                  "correctness": 1.0,
+                  "efficiency": 1.0,
+                  "security": 1.0,
+                  "usability": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 1.0,
+                "process_score": 0.85,
+                "evidence": [
+                  "PASS select name from users",
+                  "PASS parameter present",
+                  "PASS where present",
+                  "PASS order by name",
+                  "PASS no literal 18",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS uses parameter",
+                  "PASS no literal 18"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 452,
+                "completion_tokens": 20,
+                "total_tokens": 472
+              },
+              "latency_ms": 233,
+              "accepted": false,
+              "is_best": false,
+              "content_hash": "c35fd3c75bf03a5f",
+              "diversity_from_best": 0.0,
+              "seed": 20261116
+            },
+            {
+              "candidate_index": 2,
+              "answer": "```sql\nSELECT name FROM users WHERE age > :min_age ORDER BY name ASC\n```",
+              "evaluation": {
+                "score": 0.9033333333333333,
+                "passed": false,
+                "feedback": "The query is valid and meets the criteria. It correctly selects the name from the users table where the age is greater than the :min_age parameter, orders the results by name in ascending order, and avoids using the literal number 18. Independent checks: PASS select name from users; PASS parameter present; PASS where present; PASS order by name; PASS no literal 18 Format checks: FAIL no markdown fence: expected not to contain '```'; PASS uses parameter; PASS no literal 18",
+                "strengths": [
+                  "Correctly uses the :min_age parameter",
+                  "Correctly orders the results by name in ascending order",
+                  "Avoids using the literal number 18"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "compliance": 1.0,
+                  "correctness": 1.0,
+                  "efficiency": 1.0,
+                  "security": 1.0,
+                  "usability": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 1.0,
+                "process_score": 0.85,
+                "evidence": [
+                  "PASS select name from users",
+                  "PASS parameter present",
+                  "PASS where present",
+                  "PASS order by name",
+                  "PASS no literal 18",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS uses parameter",
+                  "PASS no literal 18"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 452,
+                "completion_tokens": 20,
+                "total_tokens": 472
+              },
+              "latency_ms": 233,
+              "accepted": false,
+              "is_best": false,
+              "content_hash": "c35fd3c75bf03a5f",
+              "diversity_from_best": 0.0,
+              "seed": 20261117
+            }
+          ],
+          "average_score": 0.9033333333333333,
+          "score_std": 0.0,
+          "diversity": 0.0,
+          "duplicate_rate": 1.0,
+          "best_candidate_index": 0
+        }
+      ],
+      "learned_strategy": "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+      "memory_used": 0,
+      "memory_written": false,
+      "memory_id": null,
+      "stopped_reason": "no_improvement",
+      "verifier_version": "rsl-verifier-v2",
+      "prompt_version": "rsl-prompts-v2",
+      "controls": {
+        "single_generation": 0.903333,
+        "generate_evaluate_revise": 0.903333,
+        "candidate_search_topk": 0.903333
+      },
+      "metrics": {
+        "baseline_score": 0.9033333333333333,
+        "best_score": 0.9033333333333333,
+        "improvement": 0.0,
+        "verified_improvement": 0.0,
+        "sample_efficiency": 0.0,
+        "mean_candidate_score": 0.9033333333333333,
+        "score_std": 0.0,
+        "mean_diversity": 0.5,
+        "mean_duplicate_rate": 0.5,
+        "holdout_score": 1.0,
+        "calibration_correlation": null,
+        "model_calls": 8,
+        "generation_calls": 4,
+        "evaluator_calls": 4,
+        "total_tokens": 3537
+      },
+      "budget_used": {
+        "model_calls": 8,
+        "generation_calls": 4,
+        "evaluator_calls": 4,
+        "total_tokens": 3537,
+        "elapsed_seconds": 8.25
+      },
+      "duration_ms": 8250
+    }
+  },
+  {
+    "experiment": 3,
+    "task": "只输出 Python 代码：实现 safe_divide(a: float, b: float) -> float | None；b 为 0 时返回 None；包含 docstring；不得输出 Markdown 围栏或解释。",
+    "result": {
+      "run_id": "rsl-c2252e83cc4f44eb",
+      "created_at": "2026-10-15T11:41:35Z",
+      "completed_at": "2026-10-15T11:41:44Z",
+      "task": "只输出 Python 代码：实现 safe_divide(a: float, b: float) -> float | None；b 为 0 时返回 None；包含 docstring；不得输出 Markdown 围栏或解释。",
+      "model": "qwen2.5-1.5b-instruct",
+      "evaluator_model": "qwen2.5-1.5b-instruct",
+      "status": "completed",
+      "baseline_score": 0.7533333333333333,
+      "initial_score": 0.7533333333333333,
+      "best_score": 0.7533333333333333,
+      "improvement": 0.0,
+      "verified_improvement": 0.0,
+      "verification_mode": "external_rules",
+      "best_round": 0,
+      "best_answer": "```python\ndef safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is zero.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b\n```",
+      "rounds": [
+        {
+          "round_index": 0,
+          "strategy": "baseline_single_generation",
+          "answer": "```python\ndef safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is zero.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b\n```",
+          "evaluation": {
+            "score": 0.7533333333333333,
+            "passed": false,
+            "feedback": "The candidate meets the success criteria. The code is syntactically correct and includes the required docstring. Independent checks: FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1); PASS def present; PASS type annotations; PASS zero returns None Format checks: FAIL no markdown fence: expected not to contain '```'; PASS def present; PASS docstring present",
+            "strengths": [
+              "Correctly implements the safe_divide function",
+              "Includes a docstring describing the function's purpose and behavior"
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "syntax": 1.0,
+              "docstring": 1.0,
+              "type_annotations": 1.0,
+              "functionality": 1.0,
+              "error_handling": 1.0,
+              "code_compliance": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 0.6666666666666666,
+            "external_score": 0.75,
+            "process_score": 0.85,
+            "evidence": [
+              "FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1)",
+              "PASS def present",
+              "PASS type annotations",
+              "PASS zero returns None",
+              "FAIL no markdown fence: expected not to contain '```'",
+              "PASS def present",
+              "PASS docstring present"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 312
+          },
+          "latency_ms": 672,
+          "accepted": true,
+          "memory_hits": [],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "```python\ndef safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is zero.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b\n```",
+              "evaluation": {
+                "score": 0.7533333333333333,
+                "passed": false,
+                "feedback": "The candidate meets the success criteria. The code is syntactically correct and includes the required docstring. Independent checks: FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1); PASS def present; PASS type annotations; PASS zero returns None Format checks: FAIL no markdown fence: expected not to contain '```'; PASS def present; PASS docstring present",
+                "strengths": [
+                  "Correctly implements the safe_divide function",
+                  "Includes a docstring describing the function's purpose and behavior"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "syntax": 1.0,
+                  "docstring": 1.0,
+                  "type_annotations": 1.0,
+                  "functionality": 1.0,
+                  "error_handling": 1.0,
+                  "code_compliance": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 0.75,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1)",
+                  "PASS def present",
+                  "PASS type annotations",
+                  "PASS zero returns None",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS def present",
+                  "PASS docstring present"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 254,
+                "completion_tokens": 58,
+                "total_tokens": 312
+              },
+              "latency_ms": 672,
+              "accepted": true,
+              "is_best": true,
+              "content_hash": "b8b7da59fcce521f",
+              "diversity_from_best": 0.0,
+              "seed": 20261015
+            }
+          ],
+          "average_score": 0.7533333333333333,
+          "score_std": 0.0,
+          "diversity": 1.0,
+          "duplicate_rate": 0.0,
+          "best_candidate_index": 0
+        },
+        {
+          "round_index": 1,
+          "strategy": "candidate_search_topk",
+          "answer": "```python\ndef safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is zero.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b\n```",
+          "evaluation": {
+            "score": 0.7533333333333333,
+            "passed": false,
+            "feedback": "The candidate meets the success criteria. The code is syntactically correct, includes the required docstring, and handles the case where b is zero by returning None. Independent checks: FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1); PASS def present; PASS type annotations; PASS zero returns None Format checks: FAIL no markdown fence: expected not to contain '```'; PASS def present; PASS docstring present",
+            "strengths": [
+              "Correctly implements the safe_divide function",
+              "Includes a docstring with clear documentation",
+              "Handles the case where b is zero by returning None"
+            ],
+            "weaknesses": [],
+            "dimension_scores": {
+              "syntax": 1.0,
+              "documentation": 1.0,
+              "handling_zero_divisor": 1.0
+            },
+            "evaluator_score": 0.85,
+            "format_score": 0.6666666666666666,
+            "external_score": 0.75,
+            "process_score": 0.85,
+            "evidence": [
+              "FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1)",
+              "PASS def present",
+              "PASS type annotations",
+              "PASS zero returns None",
+              "FAIL no markdown fence: expected not to contain '```'",
+              "PASS def present",
+              "PASS docstring present"
+            ],
+            "safety_flags": [],
+            "evaluator_backends": [
+              "local"
+            ]
+          },
+          "usage": {
+            "total_tokens": 1587
+          },
+          "latency_ms": 1922,
+          "accepted": false,
+          "memory_hits": [],
+          "candidates": [
+            {
+              "candidate_index": 0,
+              "answer": "```python\ndef safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is zero.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b\n```",
+              "evaluation": {
+                "score": 0.7533333333333333,
+                "passed": false,
+                "feedback": "The candidate meets the success criteria. The code is syntactically correct, includes the required docstring, and handles the case where b is zero by returning None. Independent checks: FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1); PASS def present; PASS type annotations; PASS zero returns None Format checks: FAIL no markdown fence: expected not to contain '```'; PASS def present; PASS docstring present",
+                "strengths": [
+                  "Correctly implements the safe_divide function",
+                  "Includes a docstring with clear documentation",
+                  "Handles the case where b is zero by returning None"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "syntax": 1.0,
+                  "documentation": 1.0,
+                  "handling_zero_divisor": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 0.75,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1)",
+                  "PASS def present",
+                  "PASS type annotations",
+                  "PASS zero returns None",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS def present",
+                  "PASS docstring present"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 471,
+                "completion_tokens": 58,
+                "total_tokens": 529
+              },
+              "latency_ms": 672,
+              "accepted": false,
+              "is_best": true,
+              "content_hash": "b8b7da59fcce521f",
+              "diversity_from_best": 0.0,
+              "seed": 20261115
+            },
+            {
+              "candidate_index": 1,
+              "answer": "```python\ndef safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is zero.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b\n```",
+              "evaluation": {
+                "score": 0.7533333333333333,
+                "passed": false,
+                "feedback": "The candidate meets the success criteria. The code is syntactically correct, includes the required docstring, and handles the case where b is zero by returning None. Independent checks: FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1); PASS def present; PASS type annotations; PASS zero returns None Format checks: FAIL no markdown fence: expected not to contain '```'; PASS def present; PASS docstring present",
+                "strengths": [
+                  "Correctly implements the safe_divide function",
+                  "Includes a docstring with clear documentation",
+                  "Handles the case where b is zero by returning None"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "syntax": 1.0,
+                  "documentation": 1.0,
+                  "handling_zero_divisor": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 0.75,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1)",
+                  "PASS def present",
+                  "PASS type annotations",
+                  "PASS zero returns None",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS def present",
+                  "PASS docstring present"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 471,
+                "completion_tokens": 58,
+                "total_tokens": 529
+              },
+              "latency_ms": 625,
+              "accepted": false,
+              "is_best": false,
+              "content_hash": "b8b7da59fcce521f",
+              "diversity_from_best": 0.0,
+              "seed": 20261116
+            },
+            {
+              "candidate_index": 2,
+              "answer": "```python\ndef safe_divide(a: float, b: float) -> float | None:\n    \"\"\"\n    Safely divides a by b, returning None if b is zero.\n    \"\"\"\n    if b == 0:\n        return None\n    return a / b\n```",
+              "evaluation": {
+                "score": 0.7533333333333333,
+                "passed": false,
+                "feedback": "The candidate meets the success criteria. The code is syntactically correct, includes the required docstring, and handles the case where b is zero by returning None. Independent checks: FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1); PASS def present; PASS type annotations; PASS zero returns None Format checks: FAIL no markdown fence: expected not to contain '```'; PASS def present; PASS docstring present",
+                "strengths": [
+                  "Correctly implements the safe_divide function",
+                  "Includes a docstring with clear documentation",
+                  "Handles the case where b is zero by returning None"
+                ],
+                "weaknesses": [],
+                "dimension_scores": {
+                  "syntax": 1.0,
+                  "documentation": 1.0,
+                  "handling_zero_divisor": 1.0
+                },
+                "evaluator_score": 0.85,
+                "format_score": 0.6666666666666666,
+                "external_score": 0.75,
+                "process_score": 0.85,
+                "evidence": [
+                  "FAIL python syntax: Python syntax error: invalid syntax (<unknown>, line 1)",
+                  "PASS def present",
+                  "PASS type annotations",
+                  "PASS zero returns None",
+                  "FAIL no markdown fence: expected not to contain '```'",
+                  "PASS def present",
+                  "PASS docstring present"
+                ],
+                "safety_flags": [],
+                "evaluator_backends": [
+                  "local"
+                ]
+              },
+              "usage": {
+                "prompt_tokens": 471,
+                "completion_tokens": 58,
+                "total_tokens": 529
+              },
+              "latency_ms": 625,
+              "accepted": false,
+              "is_best": false,
+              "content_hash": "b8b7da59fcce521f",
+              "diversity_from_best": 0.0,
+              "seed": 20261117
+            }
+          ],
+          "average_score": 0.7533333333333333,
+          "score_std": 0.0,
+          "diversity": 0.0,
+          "duplicate_rate": 1.0,
+          "best_candidate_index": 0
+        }
+      ],
+      "learned_strategy": "Best verified candidate was reached in round 0. Keep candidate search with independent checks (observed gain 0.000).",
+      "memory_used": 0,
+      "memory_written": false,
+      "memory_id": null,
+      "stopped_reason": "no_improvement",
+      "verifier_version": "rsl-verifier-v2",
+      "prompt_version": "rsl-prompts-v2",
+      "controls": {
+        "single_generation": 0.753333,
+        "generate_evaluate_revise": 0.753333,
+        "candidate_search_topk": 0.753333
+      },
+      "metrics": {
+        "baseline_score": 0.7533333333333333,
+        "best_score": 0.7533333333333333,
+        "improvement": 0.0,
+        "verified_improvement": 0.0,
+        "sample_efficiency": 0.0,
+        "mean_candidate_score": 0.7533333333333333,
+        "score_std": 0.0,
+        "mean_diversity": 0.5,
+        "mean_duplicate_rate": 0.5,
+        "holdout_score": 1.0,
+        "calibration_correlation": null,
+        "model_calls": 8,
+        "generation_calls": 4,
+        "evaluator_calls": 4,
+        "total_tokens": 3758
+      },
+      "budget_used": {
+        "model_calls": 8,
+        "generation_calls": 4,
+        "evaluator_calls": 4,
+        "total_tokens": 3758,
+        "elapsed_seconds": 8.531
+      },
+      "duration_ms": 8530
+    }
+  }
+]
